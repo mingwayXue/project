@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 
+		描述一个持久化类
+		 name属性为持久化类的全名
+		 table 该持久化类对应的表名  默认情况下为类名
+		 catalog 为数据库的名称
+	 -->
+	<class name="com.xue.oas.domain.Person">
+		<!-- 
+			id对应表中的主键
+			  name为持久化类中属性的名称
+			  length 为对应数据库表中相应字段的长度
+			  column  属性的名称对应的表的字段名称   不写则默认和属性的名称一致
+		 -->
+		<id name="pid" length="5" type="java.lang.Long" column="pid">
+			<!-- 
+				主键的生成器
+			 -->
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" column="name" type="java.lang.String" length="20">
+		</property>
+		<property name="description" column="description" type="java.lang.String" length="50">
+		</property>
+	</class>
+</hibernate-mapping>

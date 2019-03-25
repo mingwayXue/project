@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="forward" namespace="/" extends="struts-default">
+		<action name="forwardAction_*" method="forward" class="com.xue.oas.action.ForwardAction">
+			<result name="top">WEB-INF/jsp/frame/top.jsp</result>
+			<result name="left">WEB-INF/jsp/frame/left.jsp</result>
+			<result name="right">WEB-INF/jsp/frame/right.jsp</result>
+			<result name="bottom">WEB-INF/jsp/frame/bottom.jsp</result>
+		</action>
+	</package>
+</struts>

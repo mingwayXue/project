@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- 
+		一个session-factory代表一个数据库
+	 -->
+<session-factory>
+	<!-- 
+		链接数据库的用户名
+	-->
+	<property name="connection.username">mingway</property>
+	<!-- 
+		链接数据库的密码
+	-->
+	<property name="connection.password">xue123</property>
+	<!-- 
+		链接数据库的驱动
+	-->
+	<property name="connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<!-- 
+		链接数据库的url
+	-->
+	<property name="connection.url">
+		jdbc:mysql://localhost:3306/framework?useUnicode=true&amp;characterEncoding=UTF-8
+	</property>
+	<!-- 
+		方言
+		告诉hibernate用什么样的数据库
+	-->
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<!-- 
+		validate 加载hibernate时，验证数据库的结构
+		update  加载hibernate时，检查数据库，如果表不存在，则创建，如果存在，则更新
+		create  每次加载hiberante,都会创建表
+		create-drop  每次加载hiberante,创建，卸载hiberante时，销毁
+	-->
+	<property name="hbm2ddl.auto">update</property>
+	<!-- 
+		显示sql语句
+	-->
+	<property name="show_sql">true</property>
+	<!-- 
+		格式化sql语句
+	-->
+	<property name="format_sql">true</property>
+	<!-- 
+		加载映射文件
+	-->
+	<mapping resource="com/xue/oas/domain/Person.hbm.xml" />
+	<!--   
+		<mapping resource="com/xue/oa/domain/Department.hbm.xml" />
+		<mapping resource="com/xue/oa/domain/Role.hbm.xml" />
+		<mapping resource="com/xue/oa/domain/User.hbm.xml" />
+	-->
+	<mapping resource="com/xue/oas/domain/Department.hbm.xml" />
+	<mapping resource="com/xue/oas/domain/Role.hbm.xml" />
+	<mapping resource="com/xue/oas/domain/User.hbm.xml" />
+	<mapping resource="com/xue/oas/domain/Privilege.hbm.xml" />
+	<mapping resource="com/xue/oas/domain/Menuitem.hbm.xml" />
+
+</session-factory>
+</hibernate-configuration>

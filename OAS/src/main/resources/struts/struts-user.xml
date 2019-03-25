@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="user" namespace="/" extends="oa_privilege">
+		<action name="userAction_*" method="{1}" class="userAction">
+			<result name="listAction">WEB-INF/jsp/user/list.jsp</result>
+			<result name="updateUI">WEB-INF/jsp/user/update.jsp</result>
+			<result name="action2action" type="redirectAction">userAction_showAllUser.action</result>
+			<result name="addUI">WEB-INF/jsp/user/add.jsp</result>
+		</action>
+	</package>
+</struts>
